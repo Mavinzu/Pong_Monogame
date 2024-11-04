@@ -7,12 +7,18 @@ namespace Pong;
 
 public class Game1 : Game
 {
+    public const int RESOLUTION_WIDTH = 800;
+    public const int RESOLUTION_HEIGHT = 600;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
+    public static Texture2D paddleSprite;
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
+        _graphics.PreferredBackBufferWidth = RESOLUTION_WIDTH;
+        _graphics.PreferredBackBufferHeight = RESOLUTION_HEIGHT;
+        _graphics.ApplyChanges();
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
@@ -27,6 +33,9 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        paddleSprite = LoadSprite("Assets/paddleBlu");
+
+
         MainScene.Init();
         // TODO: use this.Content to load your game content here
     }
@@ -43,12 +52,18 @@ public class Game1 : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
+        GraphicsDevice.Clear(Color.Black);
 
         // TODO: Add your drawing code here
         _spriteBatch.Begin();
         MainScene.Draw(_spriteBatch);
         _spriteBatch.End();
         base.Draw(gameTime);
+    }
+
+
+    private Texture2D LoadSprite(string Path)
+    {
+        return Content.Load<Texture2D>(Path);
     }
 }
