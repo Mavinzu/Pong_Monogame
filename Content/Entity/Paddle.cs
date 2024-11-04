@@ -13,6 +13,13 @@ public class Paddle
     float rotation; // rotation of sprite
     
     Keys[] movement = new Keys[2]; // input movement
+
+    // Access to rectangle paddle
+    public Rectangle GetCollider{
+        get{
+            return boxCollider2D;
+        }
+    }
     public Paddle(Texture2D Sprite, Rectangle Collider)
     {
         sprite = Sprite;

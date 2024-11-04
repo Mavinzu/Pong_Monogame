@@ -13,6 +13,7 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
 
     public static Texture2D paddleSprite;
+    public static Texture2D ballSprite;
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -34,7 +35,7 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         paddleSprite = LoadSprite("Assets/paddleBlu");
-
+        ballSprite = LoadSprite("Assets/ballBlue");
 
         MainScene.Init();
         // TODO: use this.Content to load your game content here
