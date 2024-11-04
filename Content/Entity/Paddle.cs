@@ -49,7 +49,6 @@ public class Paddle
     public void Draw(SpriteBatch spriteBatch)
     {
         spriteBatch.Draw(sprite, position, null, Color.White, rotation, origin, 1, 0, 0);
-        spriteBatch.Draw(sprite, boxCollider2D, Color.Red * 0.3f);
     }
 
     public void AddMovement(Keys up, Keys down)
