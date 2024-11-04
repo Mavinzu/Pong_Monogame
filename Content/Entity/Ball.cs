@@ -59,11 +59,11 @@ public class Ball
 
     private void DetectPaddleCollider()
     {
-        if(boxCollider2D.Left < MainScene.paddle1.GetCollider.Right)
+        if(boxCollider2D.Intersects(MainScene.paddle1.GetCollider))
         {
             direction.X = 1;
         }
-        if(boxCollider2D.Right > MainScene.paddle2.GetCollider.Left)
+        if(boxCollider2D.Intersects(MainScene.paddle2.GetCollider))
         {
             direction.X = -1;
         }
